@@ -1,4 +1,5 @@
 package com.jungsungwook.myspring.domain.auth.controller
+import com.jungsungwook.myspring.domain.auth.models.dto.SignInDto
 import com.jungsungwook.myspring.domain.auth.models.dto.SignUpDto
 import com.jungsungwook.myspring.domain.auth.service.AuthService
 import org.springframework.stereotype.Controller
@@ -13,8 +14,9 @@ class AuthController (
         return "sign-up"
     }
 
-    @GetMapping("/auth/signin")
-    fun signin(): String {
-        return "hi"
+    @PostMapping("/auth/signin")
+    fun signIn(@RequestBody body: SignInDto): String {
+        var result = authService.signInByPost(body)
+        return result
     }
 }
