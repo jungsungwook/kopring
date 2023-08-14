@@ -30,10 +30,15 @@
 ***
 ## 기능
 ***
+
 ***
 ## 자문자답
 ***
+Q. runCatching이랑 @Throws 어노테이션이랑 무슨 차이?
+
+A. runCatching은 예외 처리를 기능적인 방식으로 다루는 Kotlin의 함수이며, @Throws는 Kotlin과 Java 코드의 예외 처리 호환성을 위한 어노테이션. 
 ***
 ## 이슈들
 - 벌써 하나 생겨버렸다.. VScode에서는 Kotlin + spring이 제대로 빌드되지 않는다는 점.... IntelliJ 쓰기 싫은데...
+- 예외처리 할 때 RunCatching 사용 하는 법
 ***
