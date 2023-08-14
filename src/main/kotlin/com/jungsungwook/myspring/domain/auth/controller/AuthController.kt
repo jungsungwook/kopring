@@ -1,6 +1,5 @@
 package com.jungsungwook.myspring.domain.auth.controller
-import com.jungsungwook.myspring.domain.auth.models.dto.SignInDto
-import com.jungsungwook.myspring.domain.auth.models.dto.SignUpDto
+import com.jungsungwook.myspring.domain.auth.models.dto.*
 import com.jungsungwook.myspring.domain.auth.service.AuthService
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.*
@@ -9,14 +8,12 @@ class AuthController (
     private val authService: AuthService
 ){
     @PostMapping("/auth/signup")
-    fun signUp(@RequestBody body: SignUpDto): String {
-        authService.signUpByPost(body)
-        return "sign-up"
+    fun signUp(@RequestBody body: SignUpRequestDto): SignUpResponseDto {
+        return authService.signUpByPost(body)
     }
 
     @PostMapping("/auth/signin")
-    fun signIn(@RequestBody body: SignInDto): String {
-        var result = authService.signInByPost(body)
-        return result
+    fun signIn(@RequestBody body: SignInRequestDto): SignInResponseDto {
+        return authService.signInByPost(body)
     }
 }
